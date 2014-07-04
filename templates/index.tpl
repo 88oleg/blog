@@ -41,6 +41,12 @@
                       <input id="query" type="text" class="input-medium search-query" />
                       <button id="search" class="btn">搜索</button>
                     </form> -->
+                    <ul class="nav navbar-nav navbar-right">
+                        <!-- GitHub buttons: see http://ghbtns.com -->
+                        <li><iframe class="navbar-text" src="http://ghbtns.com/github-btn.html?user=wenzhixin&repo=blog&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe></li>
+                        <li><iframe class="navbar-text" src="http://ghbtns.com/github-btn.html?user=wenzhixin&repo=blog&type=fork&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="95" height="20"></iframe></li>
+                        <li><iframe class="navbar-text" src="http://ghbtns.com/github-btn.html?user=wenzhixin&type=follow&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="165" height="20"></iframe></li>
+                    </ul>
                 </div>
             </div>
         </div>

@@ -364,6 +364,11 @@ body.dark {
     border-top: 1px solid #1c1e22;
 }
 
+.navbar-text {
+    margin-right: 0;
+    margin-left: 0;
+}
+
 /*response*/
 @media (min-width: 1200px) {
     .container {
