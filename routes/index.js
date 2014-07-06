@@ -5,12 +5,14 @@
 
 var post = require('./post'),
 	rss = require('./rss'),
-	stat = require('./stat');
+	stat = require('./stat'),
+    examples = require('./examples');
 
 module.exports = function(app) {
 	app.get('/', checkUrl);
 	app.get('/:file', checkUrl);
 	app.get('/:yy/:mm/:dd/:file', checkUrl);
+    app.get('/examples/:project/:func', examples);
 };
 
 function checkUrl(req, res) {
