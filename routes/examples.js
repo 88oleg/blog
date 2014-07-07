@@ -8,21 +8,54 @@ var projects = {
         data: function(req, res) {
             var offset = +req.query.offset || 0,
                 limit = +req.query.limit || 20,
+                search = req.query.search,
+                name = req.query.name,
+                order = req.query.order || 'asc',
+
+                i,
                 max = offset + limit,
+                rows = [],
                 result = {
-                    total: 1000,
+                    total: 800,
                     rows: []
                 };
 
-            if (max > 1000) {
-                max = 1000;
-            }
-            for (var i = offset; i < max; i++) {
-                result.rows.push({
+            for (i = 0; i < result.total; i++) {
+                rows.push({
                     id: i,
                     name: 'test' + i,
                     price: '$' + i
                 });
+            }
+            if (search) {
+                rows = rows.filter(function(item) {
+                    return item.name.indexOf(search) !== -1;
+                });
+            }
+            if (['id', 'name', 'price'].indexOf(name) !== -1) {
+                rows = rows.sort(function(a, b) {
+                    var c = a[name],
+                        d = b[name];
+
+                    if (name === 'price') {
+                        c = +c.substring(1);
+                        d = +d.substring(1);
+                    }
+                    if (c < d) {
+                        return order === 'asc' ? -1 : 1;
+                    }
+                    if (c > d) {
+                        return order === 'asc' ? 1 : -1;
+                    }
+                    return 0;
+                });
+            }
+
+            if (max > rows.length) {
+                max = rows.length;
+            }
+            for (i = offset; i < max; i++) {
+                result.rows.push(rows[i]);
             }
             res.json(result);
         }
