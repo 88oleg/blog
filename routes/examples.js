@@ -54,6 +54,8 @@ var projects = {
             if (max > rows.length) {
                 max = rows.length;
             }
+
+            result.total = rows.length;
             for (i = offset; i < max; i++) {
                 result.rows.push(rows[i]);
             }
