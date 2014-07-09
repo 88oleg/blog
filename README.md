@@ -8,10 +8,6 @@
 http://wenzhixin.net.cn
 
 
-### 博客时间轴：
-
-http://wenzhixin.net.cn/timeline.html
-
 
 ### 博客RSS：
 
