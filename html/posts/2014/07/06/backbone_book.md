@@ -1,5 +1,7 @@
 ## 读《Backbone.js 实战》
 
+分类：前端技术 | 标签：Bootstrap、按钮、prop | 发布时间：2014-07-06 07:31:00
+
 ___
 
 Backbone 是一个轻量级 JavaScript 的 MVC 框架，配合 Underscore 这个依赖库，我们可以打造出强大的 MVC 应用程序。其实很早就用到 Backbone + Underscore 进行网站和应用程序的开发了，只是国内一直没有相关的书籍，这次看到《Backbone.js 实战》，就买下了。现在对书籍的要求越来越高，对于这本书也认认真真的看了一遍，这里写一下读书的笔记和自己的一些看法。
