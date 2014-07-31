@@ -33,7 +33,7 @@ function checkUrl(req, res) {
 function autoBuild(req, res) {
     var command = 'git pull --rebase; node build';
     shelljs.exec(command, function (code, output) {
-        console.log(output);
+//        console.log(output);
         res.status(200);
         res.end();
     });
