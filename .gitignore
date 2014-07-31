@@ -3,6 +3,7 @@
 .settings
 *.log
 *.zip
+config
 node_modules
 html/admin
 bootstrap
