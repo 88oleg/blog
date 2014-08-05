@@ -31,12 +31,19 @@ ___
 
     jQuery.fn.prop = function() {
         var value,
-            args = arguments;
+            args = Array.prototype.slice.apply(arguments);
 
+        if (!this.length && args.length === 1) {
+            return undefined;
+        }
         this.each(function() {
-            value = fn[$(this).is('a') ? 'attr' : 'prop'].apply($(this), args);
+            if (args.length === 1) {
+                value = fn[$(this).is('a') ? 'attr' : 'prop'].apply($(this), args);
+            } else {
+                fn[$(this).is('a') ? 'attr' : 'prop'].apply($(this), args);
+            }
         });
-        return typeof value === 'undefine' ? this : value;
+        return typeof value === 'undefined' ? this : value;
     };
 })();
 ```
