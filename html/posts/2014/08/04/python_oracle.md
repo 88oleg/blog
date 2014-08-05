@@ -35,6 +35,7 @@ sudo dpkg -i oracle-instantclient12.1-devel_12.1.0.2.0-2_amd64.deb
 ```
 export ORACLE_HOME=/usr/lib/oracle/12.1/client64/
 export LD_LIBRARY_PATH=$ORACLE_HOME/lib
+export NLS_LANG=AMERICAN_AMERICA.WE8ISO8859P1 # 设置 Oracle 编码，解决乱码问题
 ```
 
 5. 安装 cx_Oracle：
