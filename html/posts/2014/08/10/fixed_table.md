@@ -35,3 +35,12 @@ ___
 
 这个方法虽然可行，但是会出现如：
 [https://github.com/wenzhixin/bootstrap-table/issues/34](https://github.com/wenzhixin/bootstrap-table/issues/34) 这个问题所描述的当表头文字过长，而表格内容过短，就会显示 ... 的问题，显然这种方法是存在很大的问题的。
+
+### 方案二(<=1.1.2)
+
+参考了很多方法，方案二使用 jQuery 的````clone```方法生成两个相同的 table，并将第一个 table 的```tbody```和第二个 table 的```thead```隐藏起来，这里需要将第一个 table 的```overflow```设置为```hidden```，第二个 table 的```margin-top```设置为第一个 table 表头的负高度。
+
+这个方案适应所有的浏览器，但是会出现如：
+[https://github.com/wenzhixin/bootstrap-table/issues/52](https://github.com/wenzhixin/bootstrap-table/issues/52) 这个问题所描述的当使用浏览器自带的搜索时，会出现两处相同的内容，并且出现在表头处（overflow 会自动调整），显然这种方法会对用户造成困扰和极大的影响用户体验。
+
+
