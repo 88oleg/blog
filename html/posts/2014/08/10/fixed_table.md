@@ -43,4 +43,19 @@ ___
 这个方案适应所有的浏览器，但是会出现如：
 [https://github.com/wenzhixin/bootstrap-table/issues/52](https://github.com/wenzhixin/bootstrap-table/issues/52) 这个问题所描述的当使用浏览器自带的搜索时，会出现两处相同的内容，并且出现在表头处（overflow 会自动调整），显然这种方法会对用户造成困扰和极大的影响用户体验。
 
+### 方案三
 
+方案三参考了许多 GitHub 上其他实现固定表头的 jQuery 插件，例如：[fixedheadertable](http://www.fixedheadertable.com/)和[datatables](http://datatables.net/extensions/fixedheader/)，跟方案二有点类似，他们都是通过 clone 表格的```thead```，然后将其固定住，并根据原来 table 的每一列的宽度重新计算设置固定表头的宽度，关键代码如下：
+```
+this.$body.find('tr:first-child:not(.no-records-found) > *').each(function(i) {
+    that.$header_.find('div.fht-cell').eq(i).width($(this).innerWidth());
+});
+```
+
+这个办法是可行的，但是发现了一个小瑕疵，那就是使用 firefox （其他浏览器都正常使用）的时候，即使表头的宽度和原来表格的宽度一模一样，有时候会渲染的不是很完美（刚刚提到的其他插件也存在这个问题），如下图显示。
+
+![](/posts/2014/08/10/1.png)
+
+___
+
+PS: 或许有更好的实现方法，不断改进。。。
