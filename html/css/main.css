@@ -392,3 +392,8 @@ body.dark {
         padding-right: 5px;
     }
 }
+
+.edit-post {
+    font-size: 14px;
+    margin-left: 10px;
+}

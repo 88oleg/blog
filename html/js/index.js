@@ -14,6 +14,7 @@ $(function() {
 		showImageBox();
 		showShare();
 		showComments();
+        showEdit();
 		hljs.initHighlightingOnLoad();
 	}
 	
@@ -125,6 +126,12 @@ $(function() {
 	        $('#comments').removeClass('hidden');
 	    }
 	}
+
+    function showEdit() {
+        if (location.pathname !== "/" && location.pathname.indexOf("/index") === -1) {
+            $('h2').append('<a class="edit-post" href="https://github.com/wenzhixin/blog/edit/master/html/posts' + location.pathname + '.md" title="编辑文章（纠正错误）"><i class="glyphicon glyphicon-edit"></i></a>');
+        }
+    }
 	
 	main();
 });
