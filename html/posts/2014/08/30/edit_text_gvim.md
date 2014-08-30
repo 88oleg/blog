@@ -47,7 +47,7 @@ $HOME/bin/edit-server &
 
 * 安装浏览器插件 [TextAid](https://chrome.google.com/webstore/detail/ppoadiihggafnhokfkpphojggcdigllp)。
 
-* 配置 TextAid：
+* 配置 TextAid：  
 安装完成后，焦点在需要输入的文本框时，浏览器 URL 输入框会出现  
 ![](/posts/2014/08/30/2.png)  
 右击点击选项，将 URL 设置为 http://127.0.0.1:8123（对应自己设置的端号）  
