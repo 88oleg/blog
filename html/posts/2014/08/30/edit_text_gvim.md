@@ -55,3 +55,14 @@ $HOME/bin/edit-server &
 
 * 开始使用：  
 在你需要编辑文本输入框时，点击浏览器 URL 出现的图标即可弹出 gvim 的输入框，然后开始享受你的 vim 编辑器吧。
+
+---
+
+> 附：设置 gvim 配色和字体。
+```
+vi ~/.gvimrc
+```
+```
+colorscheme slate
+set guifont=Ubuntu\ Mono\ 12
+```
