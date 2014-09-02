@@ -15,4 +15,5 @@ aapt not found under the right path
 ```	
 sudo apt-get install ia32-libs # 12.04
 sudo apt-get install lib32z1 # 14.04
+sudo apt-get install lib32stdc++6
 ```
