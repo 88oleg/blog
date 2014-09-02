@@ -15,5 +15,18 @@ aapt not found under the right path
 ```	
 sudo apt-get install ia32-libs # 12.04
 sudo apt-get install lib32z1 # 14.04
-sudo apt-get install lib32stdc++6
+```
+
+#### 问题：
+
+```
+ Perhaps JAVA_HOME does not point to the JDK. It is currently set to "/usr/lib/jvm/java-6-openjdk/jre"
+```
+
+#### 解决：
+
+Fixed it by installing the open jdk:
+
+```
+sudo apt-get install openjdk-7-jdk
 ```
