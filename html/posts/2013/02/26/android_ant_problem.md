@@ -6,8 +6,13 @@ ___
 
 #### 问题：
 
-	aapt not found under the right path
+```
+aapt not found under the right path
+```
 
 #### 解决：
-	
-	sudo apt-get install ia32-libs
+
+```	
+sudo apt-get install ia32-libs # 12.04
+sudo apt-get install lib32z1 # 14.04
+```
