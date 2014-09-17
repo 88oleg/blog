@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>二维码生成工具</title>
+    <link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/base.css">
+</head>
+<body>
+<div class="container">
+    <div class="form-horizontal">
+        <div class="form-group">
+            <label for="text" class="col-sm-2 control-label">二维码地址</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="text" placeholder="二维码地址">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="text" class="col-sm-2 control-label">大小</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="size" value="256*256" placeholder="大小">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button id="create" class="btn btn-default">生成二维码</button>
+            </div>
+        </div>
+    </div>
+    <div class="tc">
+        <div id="qrcode"></div>
+    </div>
+</div>
+<script src="../../js/jquery.min.js"></script>
+<script src="jquery.qrcode.min.js"></script>
+<script>
+    $(function () {
+        var $create = $('#create'),
+            $qrcode = $('#qrcode'),
+            $text = $('#text').val(location.href),
+            $size = $('#size');
+
+        function create() {
+            var sizes = $size.val().split('*');
+            if (sizes.length !== 2) {
+                alert('请输入正确的格式，例如：128*128');
+                return;
+            }
+            $qrcode.html('').qrcode({
+                text: $text.val(),
+                width: sizes[0],
+                height: sizes[1]
+            });
+        }
+
+        $create.click(create);
+        create();
+    });
+</script>
+</body>
+</html>
