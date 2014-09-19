@@ -15,7 +15,7 @@ http {
 }
 ```
 
-设置 `server`
+设置 `server`：
 ```
 server {
     listen 80 default;
