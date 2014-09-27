@@ -4,8 +4,8 @@
 
 ___
 
-1、无法连接到 Repository： (https://dl-ssl.google.com/android/eclipse/)[https://dl-ssl.google.com/android/eclipse/]
-或者 (http://dl-ssl.google.com/android/eclipse/)[http://dl-ssl.google.com/android/eclipse/]
+1、无法连接到 Repository： [https://dl-ssl.google.com/android/eclipse/](https://dl-ssl.google.com/android/eclipse/)
+或者 [http://dl-ssl.google.com/android/eclipse/](http://dl-ssl.google.com/android/eclipse/)
 
 解决：下载 zip 包进行本地安装（如：[ADT-18.0.0](http://dl.google.com/android/ADT-18.0.0.zip)）或者通过翻墙设置代理
 
