@@ -1,14 +1,13 @@
 ## Ubuntu 下 eclipse 搭建 Android 开发环境安装 ADT 的问题
 
-分类：移动开发 | 标签：adroid | 发布时间：2012-04-10 00:00:00
+分类：移动开发 | 标签：android | 发布时间：2012-04-10 00:00:00
 
 ___
 
-1、无法连接到 Repository： https://dl-ssl.google.com/android/eclipse/
-或者 http://dl-ssl.google.com/android/eclipse/
+1、无法连接到 Repository： (https://dl-ssl.google.com/android/eclipse/)[https://dl-ssl.google.com/android/eclipse/]
+或者 (http://dl-ssl.google.com/android/eclipse/)[http://dl-ssl.google.com/android/eclipse/]
 
-解决：下载 zip 包进行本地安装（如：ADT-18.0.0
-http://dl.google.com/android/ADT-18.0.0.zip）或者通过翻墙设置代理
+解决：下载 zip 包进行本地安装（如：[ADT-18.0.0](http://dl.google.com/android/ADT-18.0.0.zip)）或者通过翻墙设置代理
 
 
 2、长时间停留在 calculating requirements and
