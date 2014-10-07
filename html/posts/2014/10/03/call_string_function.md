@@ -4,19 +4,19 @@
 
 ___
 
-由于 [bootstrap-table](https://github.com/wenzhixin/bootstrap-table) 插件需要支持`data-name="functionName"`的方式，所以在实现的过程中使用了`eval`的方法。我们知道，在 JavaScript 中，`eval`是丑陋的，[MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/eval)提到：
+由于 [bootstrap-table](https://github.com/wenzhixin/bootstrap-table) 插件需要支持`data-name="functionName"`的方式，所以在实现的过程中使用了`eval`的方法。我们知道，在 JavaScript 中，`eval`是丑陋的，在[MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/eval)中提到：
 
 > Obsolete
 
 > This feature is obsolete. Although it may still work in some browsers, its use is discouraged since it could be removed at any time. Try to avoid using it.
 
-`eval`执行字符串代码，例如：
+我们通过`eval`执行字符串代码，例如：
 ```js
 eval("var x = 'Hello from eval!';");
 console.log(x);
 ```
 
-然后，`eval`会带来一些意想不到的问题：
+然而，`eval`会带来一些意想不到的问题：
 
 1. 安全性问题：你的字符串可能会被注入其他的命令或者第三方脚本。
 2. 可调试问题：很难去调试错误信息。
