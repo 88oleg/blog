@@ -66,13 +66,23 @@ if (typeof fn === 'function') {
 
 最后，将其封装成了一个工具函数：
 ```js
-var calculateFunctionValue = function (func, args) {
+var calculateFunctionValue = function (func, args, defaultValue) {
     if (typeof func === 'string') {
-        func = window[func];
+        // support obj.func1.func2
+        var fs = func.split('.');
+
+        if (fs.length > 1) {
+            func = window;
+            $.each(fs, function (i, f) {
+                func = func[f];
+            });
+        } else {
+            func = window[func];
+        }
     }
     if (typeof func === 'function') {
         return func.apply(null, args);
     }
-    return;
+    return defaultValue;
 };
 ```
