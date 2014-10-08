@@ -86,3 +86,12 @@ var calculateFunctionValue = function (func, args, defaultValue) {
     return defaultValue;
 };
 ```
+
+___
+
+**扩展：**
+
+对字符串对象，也同样的方法处理。而对于字符串数组，则使用类似：
+```js
+'[5, 10, 20, 50, 100, 200]'.replace(/, /g, ',').slice(1, -1).split(',');
+```
