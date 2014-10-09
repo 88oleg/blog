@@ -9,7 +9,7 @@ var projects = {
             var offset = +req.query.offset || 0,
                 limit = +req.query.limit || 20,
                 search = req.query.search,
-                name = req.query.name,
+                sort = req.query.sort,
                 order = req.query.order || 'asc',
 
                 i,
@@ -32,12 +32,12 @@ var projects = {
                     return item.name.indexOf(search) !== -1;
                 });
             }
-            if (['id', 'name', 'price'].indexOf(name) !== -1) {
+            if (['id', 'name', 'price'].indexOf(sort) !== -1) {
                 rows = rows.sort(function(a, b) {
                     var c = a[name],
                         d = b[name];
 
-                    if (name === 'price') {
+                    if (sort === 'price') {
                         c = +c.substring(1);
                         d = +d.substring(1);
                     }
