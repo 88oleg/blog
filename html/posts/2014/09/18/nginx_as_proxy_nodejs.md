@@ -6,12 +6,10 @@ ___
 
 很多时候，我们需要为 NodeJs 设置反向代理，例如本博客后台 NodeJs 的应用监听的端口为 3333，通过 Nginx 便可以轻松代理为 80 端口，那么应该如何设置呢？
 
-首先设置 `http`：
+首先设置 `upstream`：
 ```
-http {
-    upstream app_blog {
-        server 127.0.0.1:3333;
-    }
+upstream app_blog {
+    server 127.0.0.1:3333;
 }
 ```
 
