@@ -81,6 +81,6 @@ crontab [ -u user ] [ -i ] { -e | -l | -r }
 *\30 * * * * root service nginx restart
 ```
 
-### crontab 常见错误
+### crontab 注意事项
 
 * 无法在 crontab 的命令中使用环境变量
