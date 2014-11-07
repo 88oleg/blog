@@ -84,4 +84,7 @@ crontab [ -u user ] [ -i ] { -e | -l | -r }
 ### crontab 使用注意
 
 * 无法在 crontab 的命令中使用环境变量
+```bash
+*/1 * * * * echo $APP_HOME # 为空
+```
 * 
