@@ -11,9 +11,7 @@ crontab [ -u user ] [ -i ] { -e | -l | -r }
 ```
 
 * -u：设置指定用户，默认为当前用户
-
 * -i：删除用户 crontab 的确认提示
-
 * -e：编辑用户的 crontab
 * -l：列表用户的 crontab
 * -r：删除用户的 crontab
@@ -84,16 +82,21 @@ crontab [ -u user ] [ -i ] { -e | -l | -r }
 ### crontab 使用注意
 
 * 无法在 crontab 的命令中使用环境变量
+
 ```bash
 */1 * * * * echo $APP_HOME # 为空
 ```
+
 * 第三个域和第五个域是 “或” 操作系统
+
 ```bash
 # 四月的第一个星期日早晨1时59分运行 a.sh
 59 1 1-7 4 0 a.sh # 错误
 59 1 1-7 4 * test `date +\%w` -eq 0 && a.sh # 正确
 ```
+
 * 分钟误用
+
 ```bash
 # 每两个小时执行一次
 * /2 * * * command # 错误
