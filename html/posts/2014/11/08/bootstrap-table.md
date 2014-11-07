@@ -66,7 +66,7 @@ ___
 
 在 GitHub 上，我们可以看到很多 Web 开源项目，而这些开源项目的工程师也乐于维护和改善这些开源项目，例如：Twitter 的 [bootstrap](https://github.com/twbs/bootstrap)，Facebook 的 [react](https://github.com/facebook/react)，阿里的 [seajs](https://github.com/seajs/seajs)，还有 [node](https://github.com/joyent/node)，[backbone](https://github.com/jashkenas/backbone)，[angular.js](https://github.com/angular/angular.js) 等等。
 
-我在签名档上写着：
+我在签名档上写道：
 
 > I am making the world better by developing open-source JavaScript libraries.
 
