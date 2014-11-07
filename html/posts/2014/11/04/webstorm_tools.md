@@ -94,6 +94,8 @@ function js2html(str, lastLine) {
 
 最后，再到 Keymap 中设置快捷键为 `Ctrl + '` 就大功告成了！
 
+![](/posts/2014/11/04/4.png)
+
 ![](/posts/2014/11/04/3.png)
 
 ---
