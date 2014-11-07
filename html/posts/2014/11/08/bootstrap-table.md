@@ -1,5 +1,7 @@
 ## 开源所带来的——记 DBackup 4.0 发布和 Bootstrap Table 插件的开发
 
+分类：前端技术 | 标签：DBackup、Bootstrap Table | 发布时间：2014-11-08 02:14:00
+
 ___
 
 ### 源起
