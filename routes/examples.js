@@ -65,5 +65,7 @@ var projects = {
 };
 
 module.exports = function(req, res) {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', 'X-Requested-With');
     projects[req.params.project][req.params.func](req, res);
 };
