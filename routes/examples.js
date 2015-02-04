@@ -23,7 +23,7 @@ var projects = {
             for (i = 0; i < result.total; i++) {
                 rows.push({
                     id: i,
-                    name: 'test' + i,
+                    name: 'Item ' + i,
                     price: '$' + i
                 });
             }
