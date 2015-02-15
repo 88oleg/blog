@@ -89,6 +89,6 @@ set echo off
 spool <Procedure_Name>.sql
 select text
 from all_source
-where name= '<procedure_name>'
+where name= '<procedure_name>';
 spool off;
 ```
