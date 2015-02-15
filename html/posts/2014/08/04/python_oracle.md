@@ -54,3 +54,15 @@ conn = cx_Oracle.connect('user', 'password', '127.0.0.1/orcl')
 cursor = conn.cursor()
 cursor.execute('select * from table')
 ```
+
+可能遇到的问题:
+
+```
+ImportError: libaio.so.1: cannot open shared object file: No such file or directory
+```
+
+解决:
+
+```
+sudo apt-get install libaio1 libaio-dev
+```
