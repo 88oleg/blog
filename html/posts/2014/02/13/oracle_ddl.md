@@ -59,9 +59,9 @@ set long 90000
 set feedback off
 set echo off
 spool <table_name>.sql
-select dbms_metadata.get_ddl('TABLE', 'TAB_NAME', '<table_name>') from dual;
-select dbms_metadata.get_ddl('VIEW', 'VIEW_NAME', '<table_name>') from dual;
-select dbms_metadata.get_ddl('INDEX', 'IDX_NAME', '<table_name>') from dual;
+select dbms_metadata.get_ddl('TABLE', '<table_name>', '<user_name>') from dual;
+select dbms_metadata.get_ddl('VIEW', '<view_name>', '<user_name>') from dual;
+select dbms_metadata.get_ddl('INDEX', '<index_name>', '<user_name>') from dual;
 spool off;
 ```
 
