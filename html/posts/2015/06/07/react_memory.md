@@ -13,6 +13,7 @@ ___
 在开始之前我们先来看看我们的 [demo](http://demos.wenzhixin.net.cn/react-memory)，游戏非常简单，输入想要记忆的文字，然后点击开始记忆即可。试玩了我们的游戏之后，那么现在就开始吧。
 
 先来看看我们的目录结构，你可以在 GitHub 上找到相对应的[源码](https://github.com/wenzhixin/react-memory)：
+
 ```
 ├── bower_components
 │   ├── bootstrap
@@ -53,6 +54,7 @@ ___
 ### 初始化
 
 * 首先，创建 npm 模块的配置文件 package.json
+
 ```sh
 {
     "name": "react-memory",
@@ -69,6 +71,7 @@ ___
 ```
 
 * 接着，创建 bower 组件的配置文件 bower.json
+
 ```sh
 {
     "name": "react-memory",
@@ -88,6 +91,7 @@ ___
 ```
 
 * 安装所需要的依赖包
+
 ```sh
 # 运行游戏时需要的依赖包
 npm install --save react lodash
@@ -116,6 +120,7 @@ React 中都是以组件的方式来体现的，从上往下，我们切割成�
 ### 组件模板
 
 由于我们使用了 nodejs 的开发方式以及 React 独有的 JSX 语法，我们组件的模板为：
+
 ```js
 var React = require('react'), // 加载 react 模块
     _ = require('lodash'), // 加载 lodash 模块
@@ -147,6 +152,7 @@ module.exports = Component;
 ### Game
 
 创建文件：`js/game.js`
+
 ```js
 var React = require('react'),
     _ = require('lodash'),
@@ -185,6 +191,7 @@ module.exports = Game;
 ### WordForm
 
 * 新建文件：`js/word-form.js`
+
 ```js
 var React = require('react'),
     _ = require('lodash');
@@ -237,6 +244,7 @@ module.exports = WordForm;
 ```
 
 * 由于用用到了 bootstrap 的样式和自定义了 error 样式，需要创建 `css/style.css` 文件
+
 ```css
 @import "../bower_components/bootstrap/dist/css/bootstrap.min.css";
 
@@ -247,6 +255,7 @@ module.exports = WordForm;
 
 ### Boar
 新建文件：`js/board.js`
+
 ```js
 var React = require('react'),
     _ = require('lodash'),
@@ -353,6 +362,7 @@ module.exports = Board;
 ### Status
 
 新建文件`status.js`
+
 ```js
 var React = require('react');
 
@@ -386,6 +396,7 @@ module.exports = Status;
 ### Tile
 
 * 新建文件`tile.js`
+
 ```js
 var React = require('react');
 
@@ -408,6 +419,7 @@ module.exports = Tile;
 ```
 
 * 修改文件`css/style.css`，增加卡片需要的样式
+
 ```css
 @-webkit-keyframes wronganim {
     to {
@@ -540,6 +552,7 @@ module.exports = Tile;
 ### app.js
 
 创建好了我们所有的组件之后，我们需要将组件组合起来，创建文件`app.js`
+
 ```js
 var React = require('react'),
     Game = require('./game');
@@ -553,6 +566,7 @@ React.render(
 ### index.html
 
 新建文件：`index.html`
+
 ```html
 <!DOCTYPE html>
 <html>
@@ -579,11 +593,13 @@ React.render(
 ### 查看结果
 
 * 开始编译监听 jsx 文件为 js
+
 ```sh
 watchify -v -o build/app.js js/app.js
 ```
 
 * 启用 http server
+
 ```sh
 http-server -p 8888
 ```
