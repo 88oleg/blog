@@ -106,7 +106,7 @@ npm install -g browserify watchify http-server
 
 ### React 组件依赖层次
 
-![](docs/component.png)
+![](https://github.com/wenzhixin/react-memory/raw/master/docs/component.png)
 
 React 中都是以组件的方式来体现的，从上往下，我们切割成非常小、功能单一的组件，分别是：
 * Game：游戏组件
