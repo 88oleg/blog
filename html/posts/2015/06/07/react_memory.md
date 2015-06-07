@@ -1,4 +1,4 @@
-## react-memory：基于 nodejs + bower + react 的文字记忆游戏。
+## react-memory：基于 nodejs + bower + react 的文字记忆游戏
 
 分类：前端技术 | 标签：React | 发布时间：2015-06-07 13:30:00
 
