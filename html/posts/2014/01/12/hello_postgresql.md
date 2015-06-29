@@ -105,7 +105,7 @@ export PGDATABASE=test
 
 创建表：
 ```
-create table user (
+create table users (
 	id serial primary key,
 	username varchar(20),
 	password varchar(20)
@@ -114,7 +114,7 @@ create table user (
 
 插入数据：
 ```
-insert into user(username, password) values('admin', 'admin');
+insert into users(username, password) values('admin', 'admin');
 ```
 
 查询数据：
