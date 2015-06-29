@@ -119,5 +119,5 @@ insert into users(username, password) values('admin', 'admin');
 
 查询数据：
 ```
-select * from user;
+select * from users;
 ```
