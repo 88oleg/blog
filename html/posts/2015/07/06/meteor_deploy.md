@@ -19,7 +19,7 @@ meteor build --directory ../build
 * 使用 rsync 同步到服务器上
 ```bash
 cd ../
-rsync -avz build/bundle hostname:/home/myapp/bundle
+rsync -avz build/bundle hostname:/home/myapp
 ```
 
 ### 安装 mongodb
