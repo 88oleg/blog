@@ -1,8 +1,10 @@
-## MySQL开启远程访问权限（ubuntu）
+## MySQL、Postgres 开启远程访问权限（ubuntu）
 
 分类：数据库 | 标签：MySQL、远程访问权限 | 发布时间：2012-05-15 00:00:00
 
 ___
+
+### MySQL
 
 1、编辑 my.cnf 文件：
 ```
@@ -41,4 +43,28 @@ select host,user from mysql.user;
 6、重启 MySQL：
 ```
 sudo /etc/init.d/mysql restart
+```
+
+### Postgres
+
+1、编辑 postgresql.conf 文件：
+```
+sudo vi /etc/postgresql/9.4/main/postgresql.conf
+
+# 增加
+listen_addresses = '*'
+```
+
+2、编辑 pg_hba.conf 文件：
+```
+sudo vi /etc/postgresql/9.4/main/pg_hba.conf
+
+# 修改
+#host    all             all             127.0.0.1/32            md5
+host    all             all             0.0.0.0/0               md5
+```
+
+3、重启 Postgres
+```
+sudo service postgresql restart
 ```
