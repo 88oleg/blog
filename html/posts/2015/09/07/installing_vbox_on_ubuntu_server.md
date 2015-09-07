@@ -30,7 +30,7 @@ sudo VBoxManage extpack install Oracle_VM_VirtualBox_Extension_Pack-5.0.2-102096
 
 ### Add vbox user
 
-Because we want to use the web service that Virtualbox provide, we need to create an new user and set the password of the user:
+Because we want to use the web service that Virtualbox provide, we need to create a new user and set the password of the user:
 
 ```sh
 sudo useradd -m -G vboxusers vbox
