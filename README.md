@@ -7,6 +7,9 @@
 
 http://wenzhixin.net.cn
 
+### 好记忆不如烂笔头
+
+https://github.com/wenzhixin/blog/issues
 
 
 ### 博客RSS：
