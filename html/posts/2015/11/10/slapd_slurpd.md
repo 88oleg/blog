@@ -32,7 +32,7 @@ LDAP目录的条目（entry）由属性（attribute）的一个聚集组成，�
  ou=people     ou=groups
 ```
  
-LDAP目录与普通数据库的主要不同之处在于数据的组织方式，它是一种有层次的、树形结构。所有条目的属性的定义是对象类object class的组成部分，并组成在一起构成schema；那些在组织内代表个人的schema被命名为white pages schema。数据库内的每个条目都与若干对象类联系，而这些对象类决定了一个属性是否为可选和它保存哪些类型的信息。属性的名字一般是一个易于记忆的字符串，例如用cn为通用名（common name）命名，而"mail"代表e-mail地址。属性取值依赖于其类型，并且LDAPv3中一般非二进制值都遵从UTF-8字符串语法。例如，mail属性包含值“user@example.com”；jpegPhotos属性一般包含JPEG/JFIF格式的图片。
+LDAP目录与普通数据库的主要不同之处在于数据的组织方式，它是一种有层次的、树形结构。所有条目的属性的定义是对象类object class的组成部分，并组成在一起构成schema；那些在组织内代表个人的schema被命名为white pages schema。数据库内的每个条目都与若干对象类联系，而这些对象类决定了一个属性是否为可选和它保存哪些类型的信息。属性的名字一般是一个易于记忆的字符串，例如用cn为通用名（common name）命名，而"mail"代表e-mail地址。属性取值依赖于其类型，并且LDAPv3中一般非二进制值都遵从UTF-8字符串语法。例如，mail属性包含值 `user@example.com`；jpegPhotos属性一般包含JPEG/JFIF格式的图片。
  
 #### 1.4 什么是 slapd
  
@@ -58,4 +58,74 @@ X.500协议包括：
 #### 1.6 什么是 slurpd
 
 Slurpd 是一个提供复制服务的 UNIX 进程，它负责分发到主 slapd 更改数据库的各种 slapd 的副本。
+
+### 2. 安装配置 slapd
+
+#### 2.1 安装 slapd 和 ldap-utils
+
+这里以 ubuntu 为例，说明如何安装和配置 slapd，通过 apt-get 来进行安装
+
+```
+sudo apt-get install slapd ldap-utils
+```
+
+#### 2.2 新增配置文件
+
+```
+sudo vi /etc/ldap/slapd.conf
+```
+```
+database ldbm
+suffix  "dc=scutech,dc=com"
+rootdn "cn=admin, dc=scutech,dc=com"
+rootpw secret
+directory "/var/lib/ldap"
+```
+
+重启 slapd
+```
+sudo service slapd restart
+```
+
+查询数据
+```
+ldapsearch -x -LLL -b dc=scutech,dc=com
+```
+
+可以看到我们添加的 admin 的数据
+```
+dn: dc=scutech,dc=com
+objectClass: top
+objectClass: dcObject
+objectClass: organization
+o: scutech.com
+dc: scutech
+
+dn: cn=admin,dc=scutech,dc=com
+objectClass: simpleSecurityObject
+objectClass: organizationalRole
+cn: admin
+description: LDAP administrator
+```
+
+#### 2.3 新增用户
+```
+vi my.ldif
+```
+```
+dn: dc=scutech,dc=com
+o: scutech.com
+objectclass: organization
+
+dn: cn=admin, dc=scutech,dc=com
+cn: zhixin
+sn: wen
+mail: wenzhixin2010@gmail.com
+objectclass: person
+```
+这里可以包含任何想要的属性值
+
+```
+ldapadd -cx -D cn=admin,dc=scutech,dc=com -w password -f my.ldif
+```
  
