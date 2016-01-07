@@ -78,5 +78,5 @@ sudo mv /root/www ~/
 
 修改文件属性
 ```
-sudo chown username.username ~/www
+sudo chown -R username.username ~/www
 ```
