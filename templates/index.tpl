@@ -84,7 +84,7 @@
     </div>
     <div class="footer">
         <p>
-            Copyright © 2012-2014 wenzhixin.net.cn
+            Copyright © 2012-2016 wenzhixin.net.cn <a href="http://www.miitbeian.gov.cn/">粤ICP备15117953号</a>
         </p>
     </div>
 
